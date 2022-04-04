@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<head>
+  <!-- Required meta tags-->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="../static/result/style/style.css">
+  <title>Esport BGMI</title>
+</head>
+<%- include('plugin/navbar/nav.ejs'); %>
+<div class="container d-flex flex-column justify-content-center" style="padding: 0px 0px;">
+  <div class="btn-group container row d-flex flex-row justify-content-center sticky-top bg-white" id="headlink-con">
+    <div class="btn-group" id="headlink" role="group" aria-label="Basic outlined example">
+      <button class="btn btn-outline-secondary" type="button"><a href="http://<%= host %>:80/" style="text-decoration: none;">Upcomming</a></button>
+      <!-- onclick="window.location.href='https://www.w3docs.com';"-->
+      <button class="btn btn-outline-secondary active" type="button">Results</button>
+      <button class="btn btn-outline-secondary" type="button"><a href="http://<%= host %>:80/top_player" style="text-decoration: none;">Top Players</a></button>
+    </div>
+  </div>
+  <div class="container row d-flex flex-row justify-content-around" id="headtournament-con" style="min-height: 100vh;">
+    <%- include('plugin/result_card.ejs'); %>
+  </div>
+</div>
+<%- include('plugin/footer.ejs'); %>
+<!-- Optional JavaScript-->
+<!-- jQuery first, then Popper.js, then Bootstrap JS-->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>

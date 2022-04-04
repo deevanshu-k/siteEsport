@@ -1,0 +1,50 @@
+
+@media screen and (min-width : 990px) {
+    #headlink-con {
+        display: none;
+    }
+}
+#headlink-con {
+    margin: 0px 0px;
+    padding: 0px;
+}
+#headlink{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+#headlink button {
+    border-radius: 0px!important;
+    /* margin-bottom: 1px; */
+}
+
+#headtournament-con {
+    margin: 0px 0px;
+    padding: 20px;
+}
+
+#tou-value {
+    color: rgb(87, 85, 85);
+    /* border: 1px solid black; */
+}
+
+.col {
+    padding: 5px 0px;
+    text-align: center;
+    
+}
+
+.progress {
+    margin: 5px 15px;
+}
+
+#tour-btn {
+    /* width: 90%; */
+    /* margin: 2px 15px; */
+    padding-top: 10px 0px;
+}
+
+/* #tour-btn button {
+    width: 33       %;
+} */

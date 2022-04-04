@@ -1,0 +1,33 @@
+<% var a=1; %> 
+<% var b = 112; %> 
+<% for (let i = 0; i < data.length; i++) { %> 
+  <%if (i != 0 && b != data[i].kills) {a++;};%>
+  <% if (a<4) { %>    
+            <div class="card" style="min-width: 250px;max-width: 350px;"><img class="card-img-top" src="../static/check_result/assets/tour/imgage.jpg" alt="Card image cap"/>
+                <div class="card-img-overlay">
+                  <h5><%=a%> st</h5>
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item"><%=data[i].name%></li>
+                  <li class="list-group-item">
+                    <div class="key">
+                      <h5>TOTAL KILL</h5>
+                    </div>
+                    <div class="value">
+                      <h5><%=data[i].kills%></h5>
+                    </div>
+                  </li>
+                  <li class="list-group-item">
+                    <div class="key">
+                      <h5>SPECIALTY</h5>
+                    </div>
+                    <div class="value">
+                      <h5><%=data[i].specialty%></h5>
+                    </div>
+                  </li>
+                </ul>
+              </div>    
+              <%b = data[i].kills;%>
+  <% }; %>       
+<% }; %> 
+

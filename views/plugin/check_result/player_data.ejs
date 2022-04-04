@@ -1,0 +1,8 @@
+<% for(var i=0; i < data.length; i++) { %>
+    <!-- console.log(data[i].dateofenroll); -->
+    <tr>
+        <th scope="row"><%= i+1 %></th>
+        <td><%= data[i].name %></td>
+        <td><%= data[i].kills %></td>
+    </tr>
+<% } %>

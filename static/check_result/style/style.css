@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Cabin&family=Inconsolata:wdth,wght@50,400;101.8,533&family=Mochiy+Pop+One&display=swap");
+
+* {
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(28, 30, 35);
+}
+
+/* heading  */
+
+header .container {
+  color: white;
+  text-align: center;
+  font-family: "Cabin", sans-serif;
+  font-family: "Inconsolata", monospace;
+  font-family: "Mochiy Pop One", sans-serif;
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+header .container h1 {
+}
+
+/* card  */
+
+.container:nth-child(2) {
+  display: flex;
+  justify-content: space-evenly;
+  align-content: space-between;
+  flex-wrap: wrap;
+  padding: 5% 0%;
+}
+
+.container .card {
+  margin-top: 20px;
+
+}
+
+.container .card-img-overlay h5 {
+  color: rgb(255, 174, 0);
+}
+.card,.card ul li{
+  background-color: rgb(37,40,45);
+  display: flex;
+  justify-content: space-between;
+  /* height: 200px; */
+  /* padding: 5px 10px; */
+}
+
+.card .key h5 {
+  color: white;
+}
+.card .value h5 {
+  color: gold;
+}
+
+.card ul li:nth-child(1) {
+  text-align: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5em;
+  /* width: 100%; */
+}
+
+/* table  */
+
+.container:nth-child(3) {
+  padding: 3% 1%;
+}
+
+.container table thead {
+  background-color: rgba(12, 12, 12, 0.158);
+}
+
+.container table th {
+  font-family: "Cabin", sans-serif;
+  font-family: "Inconsolata", monospace;
+  font-family: "Mochiy Pop One", sans-serif;
+  color: rgba(255, 255, 255, 0.788);
+  text-align: center;
+}
+.container table tbody tr:hover {
+  background-color: rgba(245, 245, 245, 0.274);
+}
+.container table td {
+  font-family: "Cabin", sans-serif;
+  font-family: "Inconsolata", monospace;
+  font-family: "Mochiy Pop One", sans-serif;
+  color: rgba(245, 245, 245, 0.651);
+  font-size: 12px;
+  text-align: center;
+}
+
+/* chart */
+
+.charts {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}

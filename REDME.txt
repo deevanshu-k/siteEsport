@@ -1,0 +1,64 @@
+﻿Node js -> is a engine which run the code.
+express -> it is a module in which their are inbuild function used for web development.
+pub -> it is a tempelate engine which make a template ready (integrate CSS,HTML,JS
+ file) before sending it to browser.
+----------------------------------------------------------------------------------------------
+
+file system:
+
+app.js
+|
+views  (html->pug files)
+|
+static  (css,js files)
+|
+node_modules
+|
+|--Modulesinstalled
+|
+packeg_lock.json
+|
+packeg.json
+
+----------------------------------------------------------------------------------------------
+var express = require('express');
+var path = require('path');
+
+var fs = require('fs');
+var app = express();
+var port = 80;
+
+app.use('/static', express.static('static'));
+app.use(express.urlencoded());
+
+// Set the template engine as pug
+app.set('view engine', 'pug');
+
+// Set the views directory
+app.set('views', path.join(__dirname, 'views'));
+
+// network
+app.get('/', (req, res) => {
+   res.status(200).render('coffeeshop');
+});
+
+var a = 0;
+app.post('/', (req, res) => {
+   console.log(req.body);
+   var name = req.body.name;
+   var email = req.body.email;
+   var message = req.body.message;
+   a ++;
+   let messages = `${a}) ${name}  gmail:${email}\nmessage:${message}\n\n`
+   fs.appendFileSync('output.txt', messages);
+   res.status(200).render('coffeeshop');
+
+});
+
+
+
+var host = '127.0.0.1';
+var server = app.listen(port, function () {
+   var port = server.address().port
+   console.log("Example app listening at http://%s:%s", host, port)
+})

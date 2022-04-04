@@ -1,0 +1,85 @@
+<% for(var i=0; i < data.length; i++) { %>
+  <% if (data[i].rstatus !=1) { %>
+    <% continue; %>
+      <% } %>
+        <div class="card mb-3 shadow-lg rounded" style="height: 270px;"><img class="card-img-top" src="../static/result/assets/tour/imgage.jpg"
+            style="max-width: 500px;height: 270px;" alt="...">
+          <div class="card-img-overlay">
+            <div class="container">
+              <div class="row">
+                <div class="col" s="">
+                  <h5 class="card-title text-warning" style="margin-bottom: 2px;">
+                    <%=data[i].type%> Match#<%=data[i].total_player%>
+                  </h5>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col tour-data">
+                  <h6 class="card-text" style="margin: 5px;color: rgba(255, 189, 8, 0.932);">
+                    <%=data[i].sheduled_on%>
+                  </h6>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col tour-data">
+                  <h6>WIN PRIZE</h6>
+                </div>
+                <div class="col tour-data">
+                  <h6>PER KILL</h6>
+                </div>
+                <div class="col tour-data">
+                  <h6>ENTRY FEES</h6>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col tour-data" id="tou-value">
+                  <h6>Rs <%=data[i].win_prize%>
+                  </h6>
+                </div>
+                <div class="col tour-data" id="tou-value">
+                  <h6>Rs <%=data[i].per_kill%>
+                  </h6>
+                </div>
+                <div class="col tour-data" id="tou-value">
+                  <h6>Rs <%=data[i].entry_fees%>
+                  </h6>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col tour-data">
+                  <h6>TYPE</h6>
+                </div>
+                <div class="col tour-data">
+                  <h6>VERSION</h6>
+                </div>
+                <div class="col tour-data">
+                  <h6>MAP</h6>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col tour-data" id="tou-value">
+                  <h6>
+                    <%=data[i].type%>
+                  </h6>
+                </div>
+                <div class="col tour-data" id="tou-value">
+                  <h6>
+                    <%=data[i].version%>
+                  </h6>
+                </div>
+                <div class="col tour-data" id="tou-value">
+                  <h6>
+                    <%=data[i].map%>
+                  </h6>
+                </div>
+              </div>
+            </div>
+            <div class="container col">
+              <div class="btn-group" id="tour-btn" role="group" aria-label="Basic outlined example">
+                <button class="btn btn-danger btn-warning" id="tou-btn" type="button"><a style="color: white;"
+                    href="http://<%= host %>:80/check_result?index=<%=data[i].indexs%>&type=<%=data[i].type%>&total_player=<%=data[i].total_player%>"> Check Results </a></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% } %>

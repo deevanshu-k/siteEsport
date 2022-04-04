@@ -1,0 +1,69 @@
+
+@media screen and (min-width : 990px) {
+    #headlink-con {
+        display: none;
+    }
+}
+#headlink-con {
+    margin: 0px 0px;
+    padding: 0px;
+}
+#headlink{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+#headlink button {
+    border-radius: 0px!important;
+    /* border-top: 3px solid blue; */
+}
+
+#headtournament-con {
+    margin: 0px 0px;
+    padding: 20px;
+}
+
+#tou-value {
+    color: rgb(236, 231, 231);
+    /* border: 1px solid black; */
+}
+
+.col {
+    padding: 0px 0px;
+    text-align: center;
+}
+
+.tour-data {
+    color: white;
+}
+
+#tou-btn {
+    width: 300px;
+}
+
+.fill { 
+    max-height: 300px;
+    height: 100%;
+}
+/* .col h6 {
+    color: whitesmoke;
+
+} */
+
+/* .progress {
+    margin: 5px 15px;
+} */
+
+/* #tour-btn {
+    
+    padding-top: 10px 0px;
+} */
+
+/* #tour-btn button {
+    width: 33       %;
+} */
+
+/* .card-img-top {
+    height: 280px;
+} */

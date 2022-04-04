@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<head>
+  <!-- Required meta tags-->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="../static/upcomming/style/style.css">
+  <title>Esport BGMI</title>
+</head>
+<%- include('plugin/navbar/nav.ejs'); %>
+  <div class="container d-flex flex-column justify-content-center" style="padding: 0px 0px;">
+    <div class="btn-group container row d-flex flex-row justify-content-center sticky-top bg-white" id="headlink-con">
+      <div class="btn-group" id="headlink" role="group" aria-label="Basic outlined example">
+        <button class="btn btn-outline-secondary active" type="button">Upcomming</button>
+        <button class="btn btn-outline-secondary" type="button"><a href="http://<%= host %>:80/result"
+            style="text-decoration: none;">Results</a></button>
+        <button class="btn btn-outline-secondary" type="button"><a href="http://<%= host %>:80/top_player"
+            style="text-decoration: none;">Top Players</a></button>
+      </div>
+    </div>
+    <div class="container row d-flex flex-row justify-content-around" id="headtournament-con"
+      style="min-height: 100vh;">
+      <%- include('plugin/tour_card.ejs'); %>
+    </div>
+  </div>
+  <%- include('plugin/footer.ejs'); %>
+    <!--Inside index.html -->
+
+    <!-- Optional JavaScript-->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS-->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+      crossorigin="anonymous"></script>
+    <!--Inside index.html -->
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script>
+
+      function join_tour(a) {
+        
+      }
+
+      var options = {
+        "key": "rzp_test_fiIwmRET6CApc2",
+        "amount": "49900",
+        "currency": "INR",
+        "name": "Dummy Academy",
+        "description": "Pay & Checkout this Course, Upgrade your DSA Skill",
+        "image": "https://media.geeksforgeeks.org/wp-content/uploads/
+				20210806114908/dummy-200x200.png",
+	"order_id": "order_HdPuQW0s9hY9AU",
+        "handler": function (response) {
+          console.log(response)
+          alert("This step of Payment Succeeded");
+        },
+        "prefill": {
+          //Here we are prefilling random contact
+          "contact": "9876543210",
+          //name and email id, so while checkout
+          "name": "Twinkle Sharma",
+          "email": "smtwinkle@gmail.com".
+	},
+        "notes": {
+          "description": "Best Course for SDE placements",
+          "language": "Available in 4 major Languages JAVA,
+					C/ C++, Python, Javascript",
+		"access": "This course have Lifetime Access"
+	},
+      "theme": {
+        "color": "#2300a3"
+      }
+};
+      var razorpayObject = new Razorpay(options);
+      console.log(razorpayObject);
+      razorpayObject.on('payment.failed', function (response) {
+        console.log(response);
+        alert("This step of Payment Failed");
+      });
+
+      document.getElementById('pay-button').onclick = function (e) {
+        razorpayObject.open();
+        e.preventDefault();
+      }
+    </script>

@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin&display=swap');
+
+body {
+  width: 100vw;
+  background-image: url(../assets/table_bg.jpg);
+  font-family: 'Cabin', sans-serif;
+}
+
+.panel {
+  text-align: center;
+  border-radius: 10px;
+  margin: 15px;
+}
+
+.panel-heading {
+    /* width: 100%; */
+  margin: 2%;
+  color: white;
+  text-align: center;
+  
+}
+
+.panel-body thead {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.493);
+}
+.panel-body tbody {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.363);
+}
+
+@media screen and (max-width: 1006px) {
+  .panel-body tr th:nth-child(4){
+    display: none;
+  }
+  .panel-body tr td:nth-child(4){
+    display: none;
+  }
+}

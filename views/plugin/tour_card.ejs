@@ -1,0 +1,102 @@
+<% for(var i=0; i < data.length; i++) { %>
+    <% if (data[i].status != 1) { %>
+       <% continue; %>
+    <% } %>
+    <div class="card mb-3 shadow-lg rounded" style="max-height: 700px; max-width: 500px;"><img class="card-img-top"
+        src="../static/upcomming/assets/tour/imgage.jpg" alt="...">
+      <div class="card-img-overlay">
+        <h5 class="card-title" style="color: rgba(255, 255, 255, 0.753);">Sheduled on : <%= data[i].sheduled_on%>
+        </h5>
+      </div>
+      <div class="card-body">
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <h5>
+                <%= data[i].type%> Match#<%= data[i].total_player%>
+              </h5>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <h6>WIN PRIZE</h6>
+            </div>
+            <div class="col">
+              <h6>PER KILL</h6>
+            </div>
+            <div class="col">
+              <h6>ENTRY FEES</h6>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col" id="tou-value">
+              <h6>Rs <%= data[i].win_prize%>
+              </h6>
+            </div>
+            <div class="col" id="tou-value">
+              <h6>Rs <%= data[i].per_kill%>
+              </h6>
+            </div>
+            <div class="col" id="tou-value">
+              <h6>Rs <%= data[i].entry_fees%>
+              </h6>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <h6>TYPE</h6>
+            </div>
+            <div class="col">
+              <h6>VERSION</h6>
+            </div>
+            <div class="col">
+              <h6>MAP</h6>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col" id="tou-value">
+              <h6>
+                <%= data[i].type%>
+              </h6>
+            </div>
+            <div class="col" id="tou-value">
+              <h6>
+                <%= data[i].version%>
+              </h6>
+            </div>
+            <div class="col" id="tou-value">
+              <h6>
+                <%= data[i].map%>
+              </h6>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="progress">
+              <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: <%= data[i].player_joined %>%">
+                <%= data[i].player_joined%>/100
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container col">
+          <div class="btn-group" id="tour-btn" role="group" aria-label="Basic outlined example">
+            <button class="btn btn-danger" type="button">
+
+              <% if (data[i].player_joined == data[i].total_player) { %>
+              <a style="color: white;" href="#"> Join Now </a>
+             <% }else { %>
+              <a style="color: white;" onclick="join_tour(data[i].indexs)" href="#"> Join Now </a>
+             <% } %>
+            </button>
+            <button class="btn btn-warning" type="button"><a style="color: white;" href="http://<%= host %>:80/check_player?index=<%=data[i].indexs%>">Check
+                Players</a></button>
+            <button class="btn btn-success" type="button">Share</button>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+<% } %>
