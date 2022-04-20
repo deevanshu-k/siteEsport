@@ -42,21 +42,21 @@ var con = mysql.createConnection({
    password: "Deevanshu/125502",
    database: "tour_bgmi"
 });
-var con1 = mysql.createConnection({
-   host: "localhost",
-   user: "deevanshu",
-   password: "Deevanshu/125502",
-   database: "tour_players"
-});
+// var con = mysql.createConnection({
+//    host: "localhost",
+//    user: "deevanshu",
+//    password: "Deevanshu/125502",
+//    database: "tour_players"
+// });
 
 con.connect(function (err) {
    if (err) throw err;
    console.log("Connected!");
 });
-con1.connect(function (err) {
-   if (err) throw err;
-   console.log("Connected!");
-});
+// con.connect(function (err) {
+//    if (err) throw err;
+//    console.log("Connected!");
+// });
 
 
 
@@ -83,7 +83,7 @@ app.get('/', (req, res) => {
 app.get('/check_player', (req, res) => {
    const index = req.query.index;
    // console.log(index);
-   con1.query(`SELECT * FROM players_${index}`, function (err, result, fields) {
+   con.query(`SELECT * FROM players_${index}`, function (err, result, fields) {
       if (err) throw err;
       // console.log(result);
       data = result;
@@ -105,7 +105,7 @@ app.get("/check_result", async (req, res) => {
    const index = req.query.index;
    const type = req.query.type;
    const total_player = req.query.total_player;
-   con1.query(`SELECT * FROM players_${index} order by kills desc`, function (err, result, fields) {
+   con.query(`SELECT * FROM players_${index} order by kills desc`, function (err, result, fields) {
       if (err) throw err;
       console.log(result);
       data = result;
@@ -114,7 +114,7 @@ app.get("/check_result", async (req, res) => {
 });
 
 app.get('/top_player', (req, res) => {
-   con1.query(`SELECT * FROM top_players`, function (err, result, fields) {
+   con.query(`SELECT * FROM top_players`, function (err, result, fields) {
       if (err) throw err;
       // console.log(result);
       data = result;
