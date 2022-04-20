@@ -83,7 +83,7 @@ app.get('/', (req, res) => {
 app.get('/check_player', (req, res) => {
    const index = req.query.index;
    // console.log(index);
-   con.query(`SELECT * FROM players_${index}`, function (err, result, fields) {
+   con.query(`SELECT * FROM player_${index}s`, function (err, result, fields) {
       if (err) throw err;
       // console.log(result);
       data = result;
@@ -105,7 +105,7 @@ app.get("/check_result", async (req, res) => {
    const index = req.query.index;
    const type = req.query.type;
    const total_player = req.query.total_player;
-   con.query(`SELECT * FROM players_${index} order by kills desc`, function (err, result, fields) {
+   con.query(`SELECT * FROM player_${index}s order by kills desc`, function (err, result, fields) {
       if (err) throw err;
       console.log(result);
       data = result;
