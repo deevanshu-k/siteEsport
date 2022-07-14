@@ -6,7 +6,7 @@ var path = require('path');
 var fs = require('fs');
 const ejs = require("ejs");
 var JSON = require('JSON');
-var mysql = require('mysql');
+var mysql = require('mysql2');
 var port = 80;
 
 const razorpayInstance = new Razorpay({

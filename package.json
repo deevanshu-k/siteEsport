@@ -9,11 +9,12 @@
   "author": "Deevanshu",
   "license": "ISC",
   "dependencies": {
-    "JSON": "^1.0.0",
     "dotenv": "^10.0.0",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
+    "JSON": "^1.0.0",
     "mysql": "^2.18.1",
+    "mysql2": "^2.3.3",
     "nodemon": "^2.0.12",
     "razorpay": "^2.8.0"
   }
